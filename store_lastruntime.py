@@ -1,3 +1,15 @@
+#-------------------------------------------------------------#
+#This Script is to get the lastrun time in UTC of the
+#Data Replication Task from Informatica Cloud and store
+#it in the config table in Oracle database. This time is
+#used later by other tasks which are dependent on The data
+#brought by this DR so that no data is missed considering the
+#timegaps between the $lastruntime variables stored for each
+# of the tasks.
+#argv[1] : Informatica Task Name , argv[2]: Informatica org
+#Name: Nidhi Kalamkar
+#Date: 8 FEB 2017
+#--------------------------------------------------------------#
 import urllib.request as R
 import json, cx_oracle, sys, datetime
 
