@@ -1,4 +1,3 @@
-FROM scratch
 COPY /tmp/agent64_install.bin /opt/ics/secureagent
 WORKDIR /opt/ics/secureagent/
 CMD [cd /opt]
