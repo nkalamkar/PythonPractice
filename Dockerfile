@@ -1,9 +1,9 @@
-COPY \/tmp/agent64_install.bin /opt/ics/secureagent
-WORKDIR \/opt/ics/secureagent/
 CMD [cd /opt]
 CMD [mkdir ics]
 CMD [cd /ics]
 CMD [mkdir secureagent]
+CMD [cp /tmp/agent64_install.bin /opt/ics/secureagent]
+WORKDIR /opt/ics/secureagent/
 CMD [./agent64_install.bin /opt/ics/secureagent]
 WORKDIR /opt/ics/secureagent/apps/agentcore
 CMD [./infaagent startup]
