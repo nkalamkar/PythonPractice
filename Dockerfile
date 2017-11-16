@@ -1,3 +1,4 @@
+FROM scratch
 CMD [cd /opt]
 CMD [mkdir ics]
 CMD [cd /ics]
