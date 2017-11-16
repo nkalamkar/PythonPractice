@@ -1,5 +1,5 @@
 FROM scratch
-COPY /tmp/agent64_inatll.bin /opt/ics/secureagent
+COPY /tmp/agent64_install.bin /opt/ics/secureagent
 WORKDIR /opt/ics/secureagent/
 CMD [cd /opt]
 CMD [mkdir ics]
