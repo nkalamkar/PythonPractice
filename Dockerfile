@@ -1,3 +1,4 @@
+FROM scratch
 RUN ubuntu:infa
 CMD [cd /opt]
 CMD [mkdir ics]
