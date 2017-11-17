@@ -1,13 +1,9 @@
-FROM scratch
-CMD [cd /opt]
-CMD [mkdir ics]
-CMD [cd /ics]
-CMD [mkdir secureagent]
-CMD [cp /tmp/agent64_install.bin /opt/ics/secureagent]
+FROM rhel
+RUN mkdir -p /opt/ics/secureagent
+RUN cp /tmp/agent64_install.bin /opt/ics/secureagent
 WORKDIR /opt/ics/secureagent/
-CMD [./agent64_install.bin /opt/ics/secureagent]
+RUN ['./agent64_install.bin','/opt/ics/secureagent']
 WORKDIR /opt/ics/secureagent/apps/agentcore
-CMD [./infaagent startup]
-CMD [sleep 1m]
-CMD [./consoleAgentManager nidhi.kalamkar@hughes.com.sit2 reset123]
-RUN echo 'install success'
+RUN ['./apps/agentcore/infaagent','startup']
+RUN sleep 50s
+RUN ['./consoleAgentManager','configure','nidhi.kalamkar@hughes.com.sit2','reset123']
