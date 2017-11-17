@@ -10,8 +10,8 @@ yum clean all
 RUN mkdir -p /opt/ics/secureagent
 ADD agent64_install.bin /opt/ics/secureagent
 WORKDIR /opt/ics/secureagent/
-RUN ['/opt/ics/secureagent/agent64_install.bin','/opt/ics/secureagent/']
+RUN ['/opt/ics/secureagent/agent64_install.bin','/opt/ics/secureagent']
 WORKDIR /opt/ics/secureagent/apps/agentcore
 RUN ['/apps/agentcore/infaagent','startup']
 RUN sleep 50s
-CMD ['/consoleAgentManager','configure','nidhi.kalamkar@hughes.com.sit2','reset123']
+CMD ['./consoleAgentManager','configure','nidhi.kalamkar@hughes.com.sit2','reset123']
